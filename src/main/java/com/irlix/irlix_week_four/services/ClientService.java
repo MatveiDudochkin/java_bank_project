@@ -23,7 +23,7 @@ public class ClientService {
         return clientRepository.findAll().stream().map(modelMapperConfig::mapClientDto).collect(Collectors.toList());
     }
 
-    public ClientDTO findById(Long id) {
+    public ClientDTO findById(long id) {
         return modelMapperConfig.mapClientDto(clientRepository.findById(id).orElse(new ClientEntities()));
     }
 
@@ -33,7 +33,7 @@ public class ClientService {
         return modelMapperConfig.mapClientDto(clientEntities);
     }
 
-    public ClientDTO updateClient(Long id, ClientDTO clientDTO) {
+    public ClientDTO updateClient(long id, ClientDTO clientDTO) {
         ClientEntities clientEntities = clientRepository.findById(id).orElse(null);
         clientEntities.setName(clientDTO.getName());
         clientEntities.setPhoneNumber(clientDTO.getPhoneNumber());
@@ -42,7 +42,7 @@ public class ClientService {
         return modelMapperConfig.mapClientDto(clientEntities);
     }
 
-    public void deleteClient(Long id) {
+    public void deleteClient(long id) {
         clientRepository.deleteById(id);
     }
 }

@@ -1,0 +1,28 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+
+    <changeSet id="v1-3" author="Matvei Dudochkin">
+        <insert tableName="clients">
+            <column name="name" value="Ivan Baranov"/>
+            <column name="phonenumber" value="98277459145"/>
+            <column name="balance" value="1215325.88"/>
+        </insert>
+        <insert tableName="clients">
+            <column name="name" value="Mikhail Volodin"/>
+            <column name="phonenumber" value="98277259145"/>
+            <column name="balance" value="839725732.23"/>
+        </insert>
+        <insert tableName="clients">
+            <column name="name" value="Maks Kulikov"/>
+            <column name="phonenumber" value="89327538161"/>
+            <column name="balance" value="14215215.35"/>
+        </insert>
+        <insert tableName="clients">
+            <column name="name" value="Oleg Kruychkov"/>
+            <column name="phonenumber" value="53277459145"/>
+            <column name="balance" value="900022.93"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

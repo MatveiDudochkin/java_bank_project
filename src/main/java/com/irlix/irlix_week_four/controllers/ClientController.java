@@ -20,7 +20,7 @@ public class ClientController {
     }
 
     @GetMapping("/show/{id}")
-    public ClientDTO getClient(@PathVariable Long id) {
+    public ClientDTO getClient(@PathVariable long id) {
         return clientService.findById(id);
     }
 
@@ -30,12 +30,12 @@ public class ClientController {
     }
 
     @PutMapping("/edit/{id}")
-    public ClientDTO updateClient(@PathVariable Long id, @RequestBody ClientDTO clientDTO) {
+    public ClientDTO updateClient(@PathVariable long id, @RequestBody ClientDTO clientDTO) {
         return clientService.updateClient(id, clientDTO);
     }
 
     @DeleteMapping({"/{id}"})
-    private void deleteClient(@PathVariable Long id) {
+    private void deleteClient(@PathVariable long id) {
         clientService.deleteClient(id);
     }
 }

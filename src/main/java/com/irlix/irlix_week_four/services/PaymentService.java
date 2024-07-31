@@ -32,7 +32,7 @@ public class PaymentService {
         return paymentRepository.findAll().stream().map(modelMapperConfig::mapPaymentDto).collect(Collectors.toList());
     }
 
-    public PaymentDTO newPayment(PaymentDTO paymentDTO, Long senderId, Long recipientId) {
+    public PaymentDTO newPayment(PaymentDTO paymentDTO, long senderId, long recipientId) {
         ClientEntities sender = clientRepository.findById(senderId).orElse(null);
         ClientEntities recipient = clientRepository.findById(recipientId).orElse(null);
         PaymentEntities payment = modelMapperConfig.mapPaymentEntity(paymentDTO);
@@ -43,7 +43,7 @@ public class PaymentService {
     }
 
     @Transactional
-    public void transfer(Long senderId, Long recipientId, BigDecimal amount) {
+    public void transfer(long senderId, long recipientId, BigDecimal amount) {
         ClientDTO sender = clientService.findById(senderId);
         ClientDTO recipient = clientService.findById(recipientId);
 
@@ -62,13 +62,13 @@ public class PaymentService {
         modelMapperConfig.mapPaymentEntity(newPayment(paymentDTO, recipient.getId(), sender.getId()));
     }
 
-    public List<PaymentDTO> getGoingPayments(Long senderId) {
+    public List<PaymentDTO> getGoingPayments(long senderId) {
         ClientEntities sender = clientRepository.findById(senderId).orElse(null);
         List<PaymentEntities> outPayments = paymentRepository.findAllBySender(sender);
         return outPayments.stream().map(modelMapperConfig::mapPaymentDto).collect(Collectors.toList());
     }
 
-    public List<PaymentDTO> getIncomingPayments(Long recipientId) {
+    public List<PaymentDTO> getIncomingPayments(long recipientId) {
         ClientEntities recipient = clientRepository.findById(recipientId).orElse(null);
         List<PaymentEntities> incomingPayments = paymentRepository.findAllByRecipient(recipient);
         return incomingPayments.stream().map(modelMapperConfig::mapPaymentDto).collect(Collectors.toList());

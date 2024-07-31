@@ -7,10 +7,10 @@ import java.time.LocalDateTime;
 
 @Data
 public class PaymentDTO {
-    private Long id;
+    private long id;
     private LocalDateTime date;
     private BigDecimal amount;
     private String message;
-    private Long senderId;
-    private Long recipientId;
+    private long senderId;
+    private long recipientId;
 }

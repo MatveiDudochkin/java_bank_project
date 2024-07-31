@@ -13,7 +13,7 @@ public class PaymentEntities {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
-    private Long id;
+    private long id;
     @Column(name = "date")
     private LocalDateTime date;
     @Column(name = "amount")
