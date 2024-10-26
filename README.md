@@ -26,6 +26,6 @@
   <img src="thymeleaf.png" width="40" height="40"/>
   <img src="https://github.com/devicons/devicon/blob/master/icons/hibernate/hibernate-original.svg" width="40" height="40"/>
   <img src="https://github.com/devicons/devicon/blob/master/icons/postgresql/postgresql-original.svg" width="40" height="40"/>
-  <img src="https://github.com/devicons/devicon/blob/master/icons/postgresql/postgresql-original.svg" width="40" height="40"/>
   <img src="https://github.com/devicons/devicon/blob/master/icons/junit/junit-original.svg" width="40" height="40"/>
+  <img src="https://github.com/devicons/devicon/blob/master/icons/liquibase/liquibase-original.svg" width="40" height="40"/>
 </div>
